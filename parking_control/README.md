@@ -8,7 +8,7 @@
 - Lombok (Facilitar criação de métodos acessores e construtores quando necessário)
 - Spring Web (Para usar uma API REST)
 - Open API (Habilitar Swagger)
-- Spring Data Mongo db
+- Spring Data JPA
 - GIT (Controle de versão do projeto)
 - IDE's (Intellij, VS Code)
 - Postman (Testes da API)
