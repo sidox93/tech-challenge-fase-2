@@ -1,6 +1,5 @@
 package br.com.fiap.parking_control.dominio.cliente.service;
 
-
 import br.com.fiap.parking_control.dominio.cliente.dto.ClienteDTO;
 import br.com.fiap.parking_control.dominio.cliente.entities.Cliente;
 import br.com.fiap.parking_control.dominio.cliente.repository.IClienteRepository;
@@ -23,8 +22,8 @@ public class ClienteService {
     }
 
     public Page<ClienteDTO> findAll(Pageable pageable) {
-        Page<Cliente> categorias = iClienteRepository.findAll(pageable);
-        return categorias.map(this::toClienteDTO);
+        Page<Cliente> clente = iClienteRepository.findAll(pageable);
+        return clente.map(this::toClienteDTO);
     }
 
     public ClienteDTO findById(Long id) {
@@ -66,7 +65,9 @@ public class ClienteService {
                 cliente.getNome(),
                 cliente.getCpf(),
                 cliente.getEmail(),
-                cliente.getTelefone()
+                cliente.getTelefone(),
+                cliente.getVeiculos(),
+                cliente.getEnderecos()
         );
     }
 
@@ -76,7 +77,9 @@ public class ClienteService {
                 clienteDTO.nome(),
                 clienteDTO.cpf(),
                 clienteDTO.email(),
-                clienteDTO.telefone()
+                clienteDTO.telefone(),
+                clienteDTO.veiculos(),
+                clienteDTO.enderecos()
         );
     }
 }

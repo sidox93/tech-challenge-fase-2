@@ -1,10 +1,10 @@
 package br.com.fiap.parking_control.dominio.veiculo.entities;
 
+import br.com.fiap.parking_control.dominio.cliente.entities.Cliente;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Objects;
-
 
 @Entity
 @Table(name="TB_VEICULO")
@@ -26,6 +26,10 @@ public class Veiculo {
     @NotNull
     @Column(name = "DS_MODELO",length = 50, nullable = false)
     private String modelo;
+
+    @ManyToOne
+    @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID_CLIENTE", nullable=false)
+    private Cliente cliente;
 
     public Veiculo() {
     }

@@ -25,26 +25,26 @@ public class ClienteController {
     @GetMapping
     public ResponseEntity<Page<ClienteDTO>> findAll(
             @PageableDefault(size = 10, page = 0, sort = "nome") Pageable pageable) {
-        Page<ClienteDTO> CategoriasDTO = clienteService.findAll(pageable);
-        return ResponseEntity.ok(CategoriasDTO);
+        Page<ClienteDTO> clienteDTO = clienteService.findAll(pageable);
+        return ResponseEntity.ok(clienteDTO);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ClienteDTO> findById(@PathVariable Long id) {
-        ClienteDTO categoriaDTO = clienteService.findById(id);
-        return ResponseEntity.ok(categoriaDTO);
+        ClienteDTO clienteDTO = clienteService.findById(id);
+        return ResponseEntity.ok(clienteDTO);
     }
 
     @PostMapping
-    public ResponseEntity<ClienteDTO> save(@Valid @RequestBody ClienteDTO categoriaDTO) {
-        ClienteDTO savedCategoria = clienteService.save(categoriaDTO);
-        return new ResponseEntity<>(savedCategoria, HttpStatus.CREATED);
+    public ResponseEntity<ClienteDTO> save(@Valid @RequestBody ClienteDTO clienteDTO) {
+        ClienteDTO savedCliente = clienteService.save(clienteDTO);
+        return new ResponseEntity<>(savedCliente, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ClienteDTO> update(@PathVariable Long id, @RequestBody ClienteDTO categoriaDTO) {
-        ClienteDTO updatedCategoria = clienteService.update(id, categoriaDTO);
-        return ResponseEntity.ok(updatedCategoria);
+    public ResponseEntity<ClienteDTO> update(@PathVariable Long id, @RequestBody ClienteDTO clienteDTO) {
+        ClienteDTO updatedCliente = clienteService.update(id, clienteDTO);
+        return ResponseEntity.ok(updatedCliente);
     }
 
     @DeleteMapping("/{id}")

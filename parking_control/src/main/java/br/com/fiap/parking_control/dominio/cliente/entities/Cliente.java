@@ -1,8 +1,13 @@
 package br.com.fiap.parking_control.dominio.cliente.entities;
 
+import br.com.fiap.parking_control.dominio.endereco.entities.Endereco;
+import br.com.fiap.parking_control.dominio.veiculo.entities.Veiculo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -30,14 +35,24 @@ public class Cliente {
     @Column(name = "NR_TELEFONE",length = 50, nullable = false)
     private String telefone;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "cliente")
+    private List<Veiculo> veiculos = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "cliente")
+    private List<Endereco> enderecos = new ArrayList<>();
+
     public Cliente() {}
 
-    public Cliente(Long id, String nome, String cpf, String email, String telefone) {
+    public Cliente(Long id, String nome, String cpf, String email, String telefone, List<Veiculo> veiculos, List<Endereco> enderecos) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
+        this.veiculos = veiculos;
+        this.enderecos = enderecos;
     }
 
     public Long getId() {
@@ -80,6 +95,22 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(List<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,6 +132,8 @@ public class Cliente {
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
+                ", veiculos=" + veiculos +
+                ", enderecos=" + enderecos +
                 '}';
     }
 }

@@ -61,7 +61,8 @@ public class ParquimetroService {
         return new ParquimetroDTO(
                 parquimetro.getId(),
                 parquimetro.getDataInicio(),
-                parquimetro.getDataFim()
+                parquimetro.getDataFim(),
+                parquimetro.getEndereco()
         );
     }
 
@@ -69,7 +70,8 @@ public class ParquimetroService {
         return new Parquimetro(
                 parquimetroDTO.id(),
                 parquimetroDTO.dataInicio(),
-                parquimetroDTO.dataFim()
+                parquimetroDTO.dataFim(),
+                parquimetroDTO.endereco()
         );
     }
 }

@@ -1,13 +1,15 @@
 package br.com.fiap.parking_control.dominio.endereco.entities;
 
 import br.com.fiap.parking_control.dominio.cliente.entities.Cliente;
+import br.com.fiap.parking_control.dominio.parquimetro.entities.Parquimetro;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Objects;
 
-@Table(name="TB_ENDERECO")
 @Entity
+@Table(name="TB_ENDERECO")
 public class Endereco {
 
     @Id
@@ -30,6 +32,10 @@ public class Endereco {
     @NotNull
     @Column(name = "NR_CEP",length = 10, nullable = false)
     private String cep;
+
+    @ManyToOne
+    @JoinColumn(name = "ID_PARQUIMETRO", referencedColumnName = "ID_PARQUIMETRO", nullable=false)
+    private Parquimetro parquimetro;
 
     @ManyToOne
     @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID_CLIENTE", nullable=false)

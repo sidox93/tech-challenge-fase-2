@@ -1,5 +1,7 @@
 package br.com.fiap.parking_control.dominio.parquimetro.entities;
 
+import br.com.fiap.parking_control.dominio.endereco.entities.Endereco;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
@@ -23,13 +25,18 @@ public class Parquimetro {
     @Column(name = "DT_FIM",length = 50, nullable = false)
     private LocalDateTime dataFim;
 
-    public Parquimetro() {
-    }
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "ID_ENDERECO", referencedColumnName = "ID_ENDERECO", nullable=false)
+    private Endereco endereco;
 
-    public Parquimetro(Long id, LocalDateTime dataInicio, LocalDateTime dataFim) {
+    public Parquimetro() {}
+
+    public Parquimetro(Long id, LocalDateTime dataInicio, LocalDateTime dataFim, Endereco endereco) {
         this.id = id;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
+        this.endereco = endereco;
     }
 
     public Long getId() {
@@ -56,6 +63,14 @@ public class Parquimetro {
         this.dataFim = dataFim;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,6 +90,7 @@ public class Parquimetro {
                 "id=" + id +
                 ", dataInicio=" + dataInicio +
                 ", dataFim=" + dataFim +
+                ", endereco=" + endereco +
                 '}';
     }
 }
