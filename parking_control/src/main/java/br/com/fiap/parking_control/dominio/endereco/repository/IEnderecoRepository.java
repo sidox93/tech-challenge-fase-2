@@ -1,4 +1,4 @@
-package br.com.fiap.parking_control.dominio.endereco.repoditory;
+package br.com.fiap.parking_control.dominio.endereco.repository;
 
 
 import br.com.fiap.parking_control.dominio.endereco.entities.Endereco;
