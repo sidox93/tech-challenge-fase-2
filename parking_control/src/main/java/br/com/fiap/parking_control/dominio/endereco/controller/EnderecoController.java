@@ -36,15 +36,15 @@ public class EnderecoController {
     }
 
     @PostMapping
-    public ResponseEntity<EnderecoDTO> save(@Valid @RequestBody EnderecoDTO clienteDTO){
-        EnderecoDTO savedCliente = enderecoService.save(clienteDTO);
-        return new ResponseEntity<>(savedCliente, HttpStatus.CREATED);
+    public ResponseEntity<EnderecoDTO> save(@Valid @RequestBody EnderecoDTO enderecoDTO){
+        EnderecoDTO savedEndereco = enderecoService.save(enderecoDTO);
+        return new ResponseEntity<>(savedEndereco, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody EnderecoDTO clienteDTO){
-        EnderecoDTO updateCliente = enderecoService.update(id, clienteDTO);
-        return ResponseEntity.ok(updateCliente);
+    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody EnderecoDTO enderecoDTO){
+        EnderecoDTO updateEndereco = enderecoService.update(id, enderecoDTO);
+        return ResponseEntity.ok(updateEndereco);
     }
 
     @DeleteMapping("/{id}")

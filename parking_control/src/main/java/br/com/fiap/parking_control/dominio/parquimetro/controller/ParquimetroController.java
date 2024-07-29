@@ -4,9 +4,6 @@ import br.com.fiap.parking_control.dominio.parquimetro.dto.ParquimetroDTO;
 import br.com.fiap.parking_control.dominio.parquimetro.service.ParquimetroService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +17,6 @@ public class ParquimetroController {
     @Autowired
     public ParquimetroController(ParquimetroService parquimetroService) {
         this.parquimetroService = parquimetroService;
-    }
-
-    @GetMapping
-    public ResponseEntity<Page<ParquimetroDTO>> findAll(
-            @PageableDefault(size = 10, page = 0, sort = "nome") Pageable pageable) {
-        Page<ParquimetroDTO> ParquimetrosDTO = parquimetroService.findAll(pageable);
-        return ResponseEntity.ok(ParquimetrosDTO);
     }
 
     @GetMapping("/{id}")

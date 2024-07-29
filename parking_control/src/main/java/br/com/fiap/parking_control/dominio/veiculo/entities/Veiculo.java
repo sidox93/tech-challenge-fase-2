@@ -34,11 +34,12 @@ public class Veiculo {
     public Veiculo() {
     }
 
-    public Veiculo(Long id, String placa, String marca, String modelo) {
+    public Veiculo(Long id, String placa, String marca, String modelo, Cliente cliente) {
         this.id = id;
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
+        this.cliente = cliente;
     }
 
     public Long getId() {
@@ -73,6 +74,14 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,6 +102,7 @@ public class Veiculo {
                 ", placa='" + placa + '\'' +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
+                ", cliente=" + cliente +
                 '}';
     }
 }

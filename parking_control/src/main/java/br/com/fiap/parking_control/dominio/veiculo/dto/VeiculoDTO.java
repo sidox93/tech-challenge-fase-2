@@ -1,5 +1,6 @@
 package br.com.fiap.parking_control.dominio.veiculo.dto;
 
+import br.com.fiap.parking_control.dominio.cliente.entities.Cliente;
 import jakarta.validation.constraints.NotBlank;
 
 public record VeiculoDTO(
@@ -12,7 +13,9 @@ public record VeiculoDTO(
         String marca,
 
         @NotBlank(message = "O modelo não pode estar em branco.")
-        String modelo
+        String modelo,
+
+        Cliente cliente
 
 ) {
 }

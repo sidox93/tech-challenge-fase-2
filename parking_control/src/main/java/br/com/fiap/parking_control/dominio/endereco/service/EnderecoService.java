@@ -63,8 +63,7 @@ public class EnderecoService {
                 enderecoDTO.rua(),
                 enderecoDTO.cidade(),
                 enderecoDTO.estado(),
-                enderecoDTO.cep(),
-                enderecoDTO.cliente()
+                enderecoDTO.cep()
         );
     }
 
@@ -74,8 +73,7 @@ public class EnderecoService {
                 endereco.getRua(),
                 endereco.getCidade(),
                 endereco.getEstado(),
-                endereco.getCep(),
-                endereco.getCliente()
+                endereco.getCep()
         );
     }
 }

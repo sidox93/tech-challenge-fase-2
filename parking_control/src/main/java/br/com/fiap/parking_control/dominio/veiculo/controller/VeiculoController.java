@@ -25,7 +25,7 @@ public class VeiculoController {
 
     @GetMapping
     public ResponseEntity<Page<VeiculoDTO>> findAll(
-            @PageableDefault(size = 10, page = 0, sort = "nome") Pageable pageable) {
+            @PageableDefault(size = 10, page = 0, sort = "placa") Pageable pageable) {
         Page<VeiculoDTO> veiculoDTO = veiculoService.findAll(pageable);
         return ResponseEntity.ok(veiculoDTO);
     }

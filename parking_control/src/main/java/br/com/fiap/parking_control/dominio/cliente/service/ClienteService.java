@@ -66,8 +66,7 @@ public class ClienteService {
                 cliente.getCpf(),
                 cliente.getEmail(),
                 cliente.getTelefone(),
-                cliente.getVeiculos(),
-                cliente.getEnderecos()
+                cliente.getEndereco()
         );
     }
 
@@ -78,8 +77,7 @@ public class ClienteService {
                 clienteDTO.cpf(),
                 clienteDTO.email(),
                 clienteDTO.telefone(),
-                clienteDTO.veiculos(),
-                clienteDTO.enderecos()
+                clienteDTO.endereco()
         );
     }
 }

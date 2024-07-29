@@ -63,7 +63,8 @@ public class VeiculoService {
                 veiculo.getId(),
                 veiculo.getPlaca(),
                 veiculo.getMarca(),
-                veiculo.getModelo()
+                veiculo.getModelo(),
+                veiculo.getCliente()
         );
     }
 
@@ -72,7 +73,8 @@ public class VeiculoService {
                 veiculoDTO.id(),
                 veiculoDTO.placa(),
                 veiculoDTO.marca(),
-                veiculoDTO.modelo()
+                veiculoDTO.modelo(),
+                veiculoDTO.cliente()
         );
     }
 }

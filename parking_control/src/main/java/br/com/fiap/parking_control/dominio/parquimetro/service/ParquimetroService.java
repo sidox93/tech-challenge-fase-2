@@ -43,7 +43,7 @@ public class ParquimetroService {
             Parquimetro parquimetro = iParquimetroRepository.getReferenceById(id);
 
             parquimetro.setDataInicio(parquimetroDTO.dataInicio());
-            parquimetro.setDataInicio(parquimetroDTO.dataFim());
+            parquimetro.setDataFim(parquimetroDTO.dataFim());
 
             parquimetro = iParquimetroRepository.save(parquimetro);
 

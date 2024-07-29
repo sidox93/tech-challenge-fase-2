@@ -21,8 +21,6 @@ public record EnderecoDTO(
 
         @NotBlank(message = "O CEP não pode estar em branco")
         @Pattern(regexp = "\\d{5}-\\d{3}", message = "O CEP deve ertar no formato 00000-000")
-        String cep,
-
-        Cliente cliente
+        String cep
 ) {
 }

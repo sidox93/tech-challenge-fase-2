@@ -2,6 +2,7 @@ package br.com.fiap.parking_control.dominio.cliente.controller;
 
 import br.com.fiap.parking_control.dominio.cliente.dto.ClienteDTO;
 import br.com.fiap.parking_control.dominio.cliente.service.ClienteService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,7 +22,8 @@ public class ClienteController {
     public ClienteController(ClienteService clienteService) {
         this.clienteService = clienteService;
     }
-
+    
+    @Operation(summary = "Obter tempo aberto")
     @GetMapping
     public ResponseEntity<Page<ClienteDTO>> findAll(
             @PageableDefault(size = 10, page = 0, sort = "nome") Pageable pageable) {

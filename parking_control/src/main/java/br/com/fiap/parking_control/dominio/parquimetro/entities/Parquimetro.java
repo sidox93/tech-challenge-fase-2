@@ -1,9 +1,7 @@
 package br.com.fiap.parking_control.dominio.parquimetro.entities;
 
 import br.com.fiap.parking_control.dominio.endereco.entities.Endereco;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -17,16 +15,16 @@ public class Parquimetro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     @Column(name = "DT_INICIO",length = 50, nullable = false)
-    private LocalDateTime dataInicio = LocalDateTime.now();
+    private LocalDateTime dataInicio;
 
-    @NotNull
     @Column(name = "DT_FIM",length = 50, nullable = false)
     private LocalDateTime dataFim;
 
-    @JsonIgnore
-    @OneToOne
+    @Column(name = "VR_HORA",length = 50, nullable = false)
+    private Double valorHora;
+
+    @ManyToOne
     @JoinColumn(name = "ID_ENDERECO", referencedColumnName = "ID_ENDERECO", nullable=false)
     private Endereco endereco;
 

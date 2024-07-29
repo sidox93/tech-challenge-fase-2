@@ -1,7 +1,6 @@
 package br.com.fiap.parking_control.dominio.endereco.entities;
 
 import br.com.fiap.parking_control.dominio.cliente.entities.Cliente;
-import br.com.fiap.parking_control.dominio.parquimetro.entities.Parquimetro;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -33,23 +32,14 @@ public class Endereco {
     @Column(name = "NR_CEP",length = 10, nullable = false)
     private String cep;
 
-    @ManyToOne
-    @JoinColumn(name = "ID_PARQUIMETRO", referencedColumnName = "ID_PARQUIMETRO", nullable=false)
-    private Parquimetro parquimetro;
-
-    @ManyToOne
-    @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID_CLIENTE", nullable=false)
-    private Cliente cliente;
-
     public Endereco() {}
 
-    public Endereco(Long id, String rua, String cidade, String estado, String cep, Cliente cliente) {
+    public Endereco(Long id, String rua, String cidade, String estado, String cep) {
         this.id = id;
         this.rua = rua;
         this.cidade = cidade;
         this.estado = estado;
         this.cep = cep;
-        this.cliente = cliente;
     }
 
     public Long getId() {
@@ -92,14 +82,6 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -121,7 +103,6 @@ public class Endereco {
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
                 ", cep='" + cep + '\'' +
-                ", cliente=" + cliente +
                 '}';
     }
 }
