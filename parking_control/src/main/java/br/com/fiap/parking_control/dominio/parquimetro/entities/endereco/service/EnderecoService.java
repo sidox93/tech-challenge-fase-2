@@ -1,8 +1,8 @@
-package br.com.fiap.parking_control.dominio.endereco.service;
+package br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.service;
 
-import br.com.fiap.parking_control.dominio.endereco.dto.EnderecoDTO;
-import br.com.fiap.parking_control.dominio.endereco.entities.Endereco;
-import br.com.fiap.parking_control.dominio.endereco.repoditory.IEnderecoRepository;
+import br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.dto.EnderecoDTO;
+import br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.entities.Endereco;
+import br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.repoditory.IEnderecoRepository;
 import br.com.fiap.parking_control.exception.ControllerNotFundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.data.domain.Page;

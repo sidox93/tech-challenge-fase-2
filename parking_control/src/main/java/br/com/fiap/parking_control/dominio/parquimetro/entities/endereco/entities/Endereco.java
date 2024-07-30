@@ -1,4 +1,4 @@
-package br.com.fiap.parking_control.dominio.endereco.entities;
+package br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.entities;
 
 import br.com.fiap.parking_control.dominio.cliente.entities.Cliente;
 import jakarta.persistence.*;
@@ -6,8 +6,8 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Objects;
 
-@Table(name="TB_ENDERECO")
 @Entity
+@Table(name="TB_ENDERECO")
 public class Endereco {
 
     @Id

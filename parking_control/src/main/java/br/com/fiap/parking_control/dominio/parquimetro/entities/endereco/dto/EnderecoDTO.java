@@ -1,4 +1,4 @@
-package br.com.fiap.parking_control.dominio.endereco.dto;
+package br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.dto;
 
 import br.com.fiap.parking_control.dominio.cliente.entities.Cliente;
 import jakarta.validation.constraints.NotBlank;

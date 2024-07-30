@@ -1,11 +1,10 @@
 package br.com.fiap.parking_control.dominio.cliente.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
+@Entity
+@Table(name="TB_CLIENTE")
 public class Cliente {
 
     @Id

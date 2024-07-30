@@ -1,7 +1,7 @@
-package br.com.fiap.parking_control.dominio.endereco.controller;
+package br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.controller;
 
-import br.com.fiap.parking_control.dominio.endereco.dto.EnderecoDTO;
-import br.com.fiap.parking_control.dominio.endereco.service.EnderecoService;
+import br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.dto.EnderecoDTO;
+import br.com.fiap.parking_control.dominio.parquimetro.entities.endereco.service.EnderecoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
